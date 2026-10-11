@@ -69,6 +69,7 @@ const technicalLeadCard=[...document.querySelectorAll('.person')].find(card=>car
 if(technicalLeadCard){
   technicalLeadCard.querySelector('.avatar span').textContent='B';
   technicalLeadCard.querySelector('h3').textContent='Bhumika';
+  technicalLeadCard.querySelector('.role').textContent='Technical Head';
 }
 const teamGrid=document.querySelector('.team-grid');
 if(teamGrid){
@@ -88,7 +89,7 @@ if(teamGrid&&!document.querySelector('[data-member="puja"]')){
 const additionalTeamMembers=[
   ['abhishek-tiwari','Abhishek Tiwari','Event Management Head','AT','Creating memorable experiences where the community can learn and connect.'],
   ['prince-dhull','Prince Dhull','Event Management Head','PD','Turning every campus event into an opportunity to build together.'],
-  ['aarya','Aarya','Social Media Head','A','Sharing the stories, energy, and people behind the community.'],
+  ['aarya-jain','Aarya Jain','Social Media Head','AJ','Sharing the stories, energy, and people behind the community.'],
   ['manvi-singhal','Manvi Singhal','Social Media Head','MS','Making every update feel useful, welcoming, and worth sharing.'],
   ['aditi-raj','Aditi Raj','PR & Outreach Head','AR','Building partnerships that bring more opportunities to our members.'],
   ['aaryan-ojha','Aaryan Ojha','PR & Outreach Head','AO','Connecting our campus builders with the wider tech community.'],
