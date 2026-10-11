@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="theme-init.js"></script>
+  <meta name="description" content="Sign in or join the GeeksforGeeks DTC campus community.">
+  <title>Member Access — GeeksforGeeks DTC</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{gfg:'#2f8d46',gfgDark:'#2f8d46'},fontFamily:{sans:['Manrope','sans-serif'],display:['Sora','sans-serif'],mono:['DM Mono','monospace']}}}}</script>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="auth-upgrades.css">
+  <link rel="stylesheet" href="gfg-brand.css">
+</head>
+<body class="min-h-screen bg-[#edf2ee] font-sans text-[#17251d] antialiased">
+  <main class="flex min-h-screen items-center justify-center p-0 md:p-7">
+    <section id="auth-shell" class="auth-shell grid w-full max-w-[620px] overflow-hidden rounded-[24px] bg-white shadow-[0_30px_90px_rgba(16,55,27,.18)]" aria-label="Member authentication">
+
+      <section class="relative flex items-center justify-center px-6 py-10 md:px-14 md:py-14">
+        <div class="w-full max-w-[430px]">
+          <img src="dtc-campus-body-logo.png" alt="DTC Campus Body" class="mb-7 h-[52px] w-[245px] object-cover object-center md:mb-9 md:h-[60px] md:w-[320px]">
+          <div class="mode-pill mb-8 grid grid-cols-2 rounded-full bg-[#edf4ee] p-1" role="tablist" aria-label="Choose account mode"><span class="mode-indicator" aria-hidden="true"></span><button data-mode="signin" class="relative z-10 px-4 py-2.5 text-sm font-bold text-gfg" type="button" role="tab" aria-selected="true">Sign In</button><button data-mode="signup" class="relative z-10 px-4 py-2.5 text-sm font-bold text-slate-500" type="button" role="tab" aria-selected="false">Sign Up</button></div>
+
+          <div class="auth-stage">
+            <form id="signin-form" class="auth-form sign-in-form" novalidate>
+              <p class="font-mono text-[10px] uppercase tracking-[.12em] text-gfg">Welcome back</p><h2 class="mt-2 font-display text-4xl font-bold tracking-[-.06em]">Continue building.</h2><p class="mb-7 mt-3 text-sm leading-6 text-slate-500">Use your registered email or campus username.</p>
+              <div class="field-group mb-3"><div class="relative"><input id="signin-email" class="peer h-14 w-full rounded-lg border border-slate-200 bg-white px-4 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="email" placeholder="Email" autocomplete="email" required><label for="signin-email" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">Email or username</label></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <div class="field-group mb-2"><div class="relative"><input id="signin-password" class="peer h-14 w-full rounded-lg border border-slate-200 bg-white px-4 pb-0 pr-16 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="password" placeholder="Password" autocomplete="current-password" required><label for="signin-password" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">Password</label><button data-password-toggle="signin-password" class="absolute right-3 top-[18px] text-xs font-extrabold text-gfg" type="button" aria-label="Show password">Show</button></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <div class="mb-7 flex items-center justify-between text-xs"><label class="flex items-center gap-2 text-slate-500"><input class="accent-gfg" type="checkbox"> Remember me</label><a class="font-bold text-gfg hover:underline" href="#">Forgot password?</a></div>
+              <button class="w-full rounded-lg bg-gfg px-5 py-4 text-sm font-extrabold text-white shadow-[0_5px_0_#1c5f31] transition duration-300 hover:-translate-y-1 hover:bg-gfgDark hover:shadow-[0_9px_20px_rgba(47,141,70,.25)] active:translate-y-0" type="submit">Sign in to DTC ↗</button>
+              <div class="my-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.1em] text-slate-400 before:h-px before:flex-1 before:bg-slate-200 after:h-px after:flex-1 after:bg-slate-200">or</div><button class="w-full rounded-lg border border-slate-200 bg-white px-5 py-3.5 text-sm font-bold transition hover:-translate-y-0.5 hover:border-gfg hover:text-gfg" type="button">G&nbsp;&nbsp; Continue with Google</button>
+            </form>
+
+            <form id="signup-form" class="auth-form sign-up-form" novalidate>
+              <p class="font-mono text-[10px] uppercase tracking-[.12em] text-gfg">Join the community</p><h2 class="mt-2 font-display text-4xl font-bold tracking-[-.06em]">Create your account.</h2><p class="mb-6 mt-3 text-sm leading-6 text-slate-500">Your next workshop, teammate or project starts here.</p>
+              <div class="field-group mb-2"><div class="relative"><input id="signup-name" class="peer h-14 w-full rounded-lg border border-slate-200 px-4 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="text" placeholder="Name" autocomplete="name" required><label for="signup-name" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">Full name</label></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <div class="field-group mb-2"><div class="relative"><input id="signup-email" class="peer h-14 w-full rounded-lg border border-slate-200 px-4 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="email" placeholder="Email" autocomplete="email" required><label for="signup-email" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">College email</label></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <div class="field-group mb-2"><div class="relative"><input id="signup-password" class="peer h-14 w-full rounded-lg border border-slate-200 px-4 pr-16 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="password" placeholder="Password" autocomplete="new-password" required><label for="signup-password" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">Create password</label><button data-password-toggle="signup-password" class="absolute right-3 top-[18px] text-xs font-extrabold text-gfg" type="button">Show</button></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <div class="field-group mb-5"><div class="relative"><input id="signup-confirm" class="peer h-14 w-full rounded-lg border border-slate-200 px-4 pr-16 pt-4 text-sm outline-none transition placeholder:text-transparent focus:border-gfg focus:ring-4 focus:ring-green-600/10" type="password" placeholder="Confirm" autocomplete="new-password" required><label for="signup-confirm" class="pointer-events-none absolute left-4 top-2 text-[10px] font-bold uppercase tracking-[.06em] text-slate-400 transition-all peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:font-bold peer-focus:uppercase peer-focus:text-gfg">Confirm password</label><button data-password-toggle="signup-confirm" class="absolute right-3 top-[18px] text-xs font-extrabold text-gfg" type="button">Show</button></div><p class="error-text mt-1 text-xs text-red-500"></p></div>
+              <label class="mb-6 flex items-start gap-2 text-xs leading-5 text-slate-500"><input class="mt-1 accent-gfg" type="checkbox" required> I agree to the community guidelines and event communication.</label>
+              <button class="w-full rounded-lg bg-gfg px-5 py-4 text-sm font-extrabold text-white shadow-[0_5px_0_#1c5f31] transition duration-300 hover:-translate-y-1 hover:bg-gfgDark hover:shadow-[0_9px_20px_rgba(47,141,70,.25)]" type="submit">Create account ↗</button>
+            </form>
+          </div>
+        </div>
+        <div id="success-toast" class="success-toast fixed bottom-6 right-6 z-50 rounded-xl border border-green-200 bg-white px-5 py-4 text-sm shadow-2xl"><strong class="block text-gfg">Details validated</strong><span class="text-xs text-slate-500">Connect this form to your backend when ready.</span></div>
+      </section>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>
